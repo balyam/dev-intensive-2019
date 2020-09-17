@@ -1,8 +1,25 @@
 package ru.skillbranch.devintensive.extensions
 
 import java.lang.IllegalStateException
+import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
+enum class TimeUnits{
+    SECOND,
+    MINUTE,
+    HOUR,
+    DAY;
+
+    operator fun times(value: Long): Long{
+        return value * when(this){
+            SECOND -> 1000L
+            MINUTE -> SECOND * 60
+            HOUR -> MINUTE * 60
+            DAY -> HOUR * 24
+        }
+    }
+}
 
 @Throws(IllegalStateException::class)
 fun Date.humanizeDiff(date: Date) : String {
@@ -25,4 +42,16 @@ fun Date.humanizeDiff(date: Date) : String {
         else -> throw  IllegalStateException("unknown time")
     }
 
+}
+
+fun Date.add(value: Long, timeUnit: TimeUnits): Date{
+    var time = this.time
+    time += timeUnit * value
+    this.time = time
+    return this
+}
+
+fun Date.format(pattern:String="HH:mm:ss dd:MM:yy"):String{
+    val dateFormat = SimpleDateFormat(pattern, Locale("ru"))
+    return dateFormat.format(this)
 }
