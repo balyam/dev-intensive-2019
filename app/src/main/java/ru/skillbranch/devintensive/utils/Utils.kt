@@ -7,4 +7,17 @@ object Utils {
         var lastName: String? = if(parts?.getOrNull(1)?.length?:0 == 0) null else parts?.getOrNull(1)
         return firstName to lastName
     }
+
+    fun toInitials(firstName: String?, lastName:String?): String?{
+        var first: String? = if(firstName?.length == 0) null else firstName?.capitalize()?.get(0).toString()
+        var last: String? =  if(lastName?.length == 0) null else lastName?.capitalize()?.get(0).toString()
+        var summary = first ?: "" + last ?: ""
+
+        return "$summary"
+
+    }
+
+    fun transliteration(payload:String?, divider:String = " "): String? {
+        return "pass"
+    }
 }

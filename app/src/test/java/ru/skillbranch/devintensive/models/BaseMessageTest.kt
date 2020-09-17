@@ -6,6 +6,7 @@ import org.junit.Assert.*
 import org.w3c.dom.Text
 import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
+import ru.skillbranch.devintensive.utils.Utils
 import java.time.LocalDateTime
 import java.util.*
 
@@ -41,6 +42,24 @@ class BaseMessageTest {
         var addDay = Date().add(2, TimeUnits.DAY)
         println(addMinute)
         println(addDay)
+    }
+
+    @Test
+    fun test_initials(){
+        //var firstname = "Esekei"
+        var pairList = listOf(
+                Pair("esekei", "Omar"),
+                Pair(null, "omar"),
+                Pair("Esekei", null),
+                Pair(null, null),
+                Pair("","")
+        )
+
+        for(pair in pairList){
+            println(Utils.toInitials(pair.first, pair.second))
+        }
+
+
     }
 
 }
