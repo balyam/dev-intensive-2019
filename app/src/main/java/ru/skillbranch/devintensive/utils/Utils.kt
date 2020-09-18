@@ -11,9 +11,10 @@ object Utils {
     fun toInitials(firstName: String?, lastName:String?): String?{
         var first: String? = if(firstName?.length == 0) null else firstName?.capitalize()?.get(0).toString()
         var last: String? =  if(lastName?.length == 0) null else lastName?.capitalize()?.get(0).toString()
-        var summary = first ?: "" + last ?: ""
+        //var summary:String? = first ?: "" + last ?: ""
+        var summary = StringBuilder()
 
-        return "$summary"
+        return "${summary.append(first).append(last)}"
 
     }
 

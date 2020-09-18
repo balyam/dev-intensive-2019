@@ -7,6 +7,7 @@ import org.w3c.dom.Text
 import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
 import ru.skillbranch.devintensive.extensions.humanizeDiff
+import ru.skillbranch.devintensive.extensions.truncate
 import ru.skillbranch.devintensive.utils.Utils
 import java.time.LocalDateTime
 import java.util.*
@@ -80,6 +81,31 @@ class BaseMessageTest {
                 .build()
         println(user)
         println(user2)
+    }
+
+    @Test
+    fun test_parse_full_name(){
+        val nameParse = Utils.parseFullName("Esekei Omar")
+        val nameParse2 = Utils.parseFullName("")
+        val nameParse3 = Utils.parseFullName("Omar")
+        val nameParse4 = Utils.parseFullName(" ")
+
+        println(nameParse)
+        println(nameParse2)
+        println(nameParse3)
+        println(nameParse4)
+    }
+
+    @Test
+    fun test_truncate(){
+        var trstr = "1234567890abcdefghijk".truncate(16)
+        var trstr2 = "1234   jhgksad".truncate(5)
+        var trstr3 = "12345    ".truncate(3)
+
+        println("${trstr.length} $trstr")
+        println("${trstr2.length} $trstr2")
+        println("${trstr3.length} $trstr3")
+
     }
 
 }
