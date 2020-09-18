@@ -35,7 +35,6 @@ class BaseMessageTest {
         println(txtMessage.formatMessage())
         println(txtMessage2.formatMessage())
         println(imgMessage.formatMessage())
-        println("firstname = ${user.firstName} , lastname = ${user.lastName}")
     }
 
     @Test
