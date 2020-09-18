@@ -6,6 +6,7 @@ import org.junit.Assert.*
 import org.w3c.dom.Text
 import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.extensions.add
+import ru.skillbranch.devintensive.extensions.humanizeDiff
 import ru.skillbranch.devintensive.utils.Utils
 import java.time.LocalDateTime
 import java.util.*
@@ -38,7 +39,7 @@ class BaseMessageTest {
 
     @Test
     fun test_add_date(){
-        var addMinute = Date().add(34, TimeUnits.MINUTE)
+        var addMinute = Date().add(34, TimeUnits.MINUTE).humanizeDiff()
         var addDay = Date().add(2, TimeUnits.DAY)
         println(addMinute)
         println(addDay)
@@ -60,6 +61,25 @@ class BaseMessageTest {
         }
 
 
+    }
+
+    @Test
+    fun test_user_builder(){
+        val user = User.Builder().id("5")
+                .firstName("Esekei")
+                .lastName("Omar")
+                .avatar("mount")
+                .rating(5)
+                .respect(7)
+                .lastVisit(Date())
+                .isOnline(true)
+                .build()
+        val user2 = User.Builder().id("7")
+                .firstName("Tleuly")
+                .rating(15)
+                .build()
+        println(user)
+        println(user2)
     }
 
 }

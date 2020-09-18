@@ -22,7 +22,7 @@ enum class TimeUnits{
 }
 
 @Throws(IllegalStateException::class)
-fun Date.humanizeDiff(date: Date) : String {
+fun Date.humanizeDiff(date: Date=Date()) : String {
     val now = Date().time
     val interval = now - date.time
     val diff = (interval/1000).toInt()
