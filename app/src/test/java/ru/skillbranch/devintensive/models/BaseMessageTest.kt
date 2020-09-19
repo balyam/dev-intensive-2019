@@ -4,10 +4,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.w3c.dom.Text
-import ru.skillbranch.devintensive.extensions.TimeUnits
-import ru.skillbranch.devintensive.extensions.add
-import ru.skillbranch.devintensive.extensions.humanizeDiff
-import ru.skillbranch.devintensive.extensions.truncate
+import ru.skillbranch.devintensive.extensions.*
 import ru.skillbranch.devintensive.utils.Utils
 import java.time.LocalDateTime
 import java.util.*
@@ -105,6 +102,15 @@ class BaseMessageTest {
         println("${trstr2.length} $trstr2")
         println("${trstr3.length} $trstr3")
 
+    }
+
+    @Test
+    fun test_date_format(){
+        var dateFormat = Date().format()
+        var dateFormat2 = Date().format("HH:mm:ss")
+
+        println(dateFormat)
+        println(dateFormat2)
     }
 
 }
