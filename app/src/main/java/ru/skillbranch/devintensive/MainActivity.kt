@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.skillbranch.devintensive.extensions.hideKeyboard
 import ru.skillbranch.devintensive.models.Bender
@@ -35,7 +36,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
 
         val status = savedInstanceState?.getString("STATUS") ?: Bender.Status.NORMAL.name
         val question = savedInstanceState?.getString("QUESTION") ?: Bender.Question.NAME.name
+
         benderObj = Bender(Bender.Status.valueOf(status), Bender.Question.valueOf(question))
+
 
         Log.d("M_MainActivity", "onCreate $status $question")
         val (r, g, b) = benderObj.status.color
