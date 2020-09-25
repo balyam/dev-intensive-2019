@@ -3,6 +3,8 @@ package ru.skillbranch.devintensive.models
 
 class Bender(var status:  Status = Status.NORMAL, var question: Question = Question.NAME){
 
+    var countWrongAnswer = 1
+
     fun askQuestion(): String = when(question){
 
         Question.NAME -> Question.NAME.question
@@ -16,15 +18,22 @@ class Bender(var status:  Status = Status.NORMAL, var question: Question = Quest
     fun listenAnswer(answer:String): Pair<String, Triple<Int, Int, Int>>{
 
        return if (question.answers.contains(answer)) {
+           countWrongAnswer = 1
            question = question.nextQuestion()
-           "Отлично! Правильный ответ\n${question.question}" to status.color
+           "Отлично - ты справился\n${question.question}" to status.color
         }
+        else if (countWrongAnswer >= 3) {
+           countWrongAnswer = 1
+           status = Status.NORMAL
+           question = Question.NAME
+           "Это неправильный ответ. Давай все по новой\n${question.question}" to status.color
+       }
+
         else {
+            countWrongAnswer++
             status = status.nextStatus()
-            "Это неправильный ответ!\n${question.question}" to status.color
+            "Это неправильный ответ. Давай все по новой\n${question.question}" to status.color
         }
-
-
     }
 
     enum class Status(val color: Triple<Int, Int, Int>) {

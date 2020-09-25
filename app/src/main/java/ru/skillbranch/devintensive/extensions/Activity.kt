@@ -12,3 +12,13 @@ fun Activity.hideKeyboard() :Unit{
         imm?.hideSoftInputFromWindow(v.windowToken, 0)
     }
 }
+
+
+//fun Activity.isKeyboardOpen(): Boolean{
+//    return true
+//}
+//
+//fun Activity.isKeyboardClosed(): Boolean{
+//    return false
+//}
+
