@@ -47,10 +47,6 @@
             android:paddingBottom="@dimen/spacing_normal_16"
             android:layout_marginLeft="@dimen/spacing_normal_16"
             android:layout_marginRight="@dimen/spacing_normal_16"
-<<<<<<< HEAD
-=======
-
->>>>>>> done_button
             />
         <ImageView
             android:id="@+id/iv_send"
