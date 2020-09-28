@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
         textTxt.text = benderObj.askQuestion()
         sendBt.setOnClickListener(this)
         messageEt.setOnEditorActionListener(this)
-        messageEt.setImeActionLabel("TKey", EditorInfo.IME_ACTION_DONE)
+        messageEt.setImeActionLabel("Done", EditorInfo.IME_ACTION_DONE)
     }
 
     override fun onStart() {
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
     }
 
     override fun onClick(v: View?) {
-        if(v?.id == R.id.iv_send) {
+        if(v?.id == R.id.iv_send || v?.id == R.id.et_message) {
             val (phrase, color) =  benderObj.listenAnswer(messageEt.text.toString())
             messageEt.setText("")
             val (r, g, b) = color
@@ -103,7 +103,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
 
     override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
         if(actionId == EditorInfo.IME_ACTION_DONE){
-            Toast.makeText(this, "Кнопка слышит меня", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Кнопка услышала тебя", Toast.LENGTH_SHORT).show()
+            onClick(v)
         }
        return true
     }
