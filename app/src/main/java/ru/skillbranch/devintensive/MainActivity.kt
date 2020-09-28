@@ -14,6 +14,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.skillbranch.devintensive.extensions.hideKeyboard
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
         textTxt.text = benderObj.askQuestion()
         sendBt.setOnClickListener(this)
         messageEt.setOnEditorActionListener(this)
-        messageEt.setImeActionLabel("Done", EditorInfo.IME_ACTION_DONE)
+        messageEt.setImeActionLabel("TKey", EditorInfo.IME_ACTION_DONE)
     }
 
     override fun onStart() {
@@ -101,7 +102,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
     }
 
     override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
-        TODO("Not yet implemented")
+        if(actionId == EditorInfo.IME_ACTION_DONE){
+            Toast.makeText(this, "Кнопка слышит меня", Toast.LENGTH_LONG).show()
+        }
+       return true
     }
 
 }
