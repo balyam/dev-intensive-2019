@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
 
         benderObj = Bender(Bender.Status.valueOf(status), Bender.Question.valueOf(question))
 
-
         Log.d("M_MainActivity", "onCreate $status $question")
         val (r, g, b) = benderObj.status.color
         benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
@@ -105,6 +104,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
         if(actionId == EditorInfo.IME_ACTION_DONE){
             //Toast.makeText(this, "Кнопка услышала тебя", Toast.LENGTH_SHORT).show()
             onClick(v)
+            hideKeyboard()
         }
        return true
     }
