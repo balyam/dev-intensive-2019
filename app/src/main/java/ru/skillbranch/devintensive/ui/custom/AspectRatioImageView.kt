@@ -9,7 +9,7 @@ class AspectRatioImageView @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyleAttributes: Int = 0
-) :ImageView(context, attrs, defStyleAttributes) {
+) :androidx.appcompat.widget.AppCompatImageView(context, attrs, defStyleAttributes) {
 
     companion object {
         private const val DEFAULT_ASPECT_RATIO = 1.78f
