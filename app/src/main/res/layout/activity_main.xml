@@ -48,6 +48,7 @@
             android:paddingBottom="@dimen/spacing_normal_16"
             android:layout_marginLeft="@dimen/spacing_normal_16"
             android:layout_marginRight="@dimen/spacing_normal_16"
+            android:maxLines="1"
             />
         <ImageView
             android:id="@+id/iv_send"
@@ -55,7 +56,7 @@
             android:layout_height="@dimen/image_button_size_24"
             android:src="@drawable/ic_baseline_send_24"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/spacing_normal_16"
+            android:layout_marginRight="@dimen/spacing_normal_16"
             />
 
         </LinearLayout>
