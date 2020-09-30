@@ -14,11 +14,11 @@ fun Activity.hideKeyboard() :Unit{
 }
 
 
-//fun Activity.isKeyboardOpen(): Boolean{
-//    return true
-//}
-//
-//fun Activity.isKeyboardClosed(): Boolean{
-//    return false
-//}
+fun Activity.isKeyboardOpen(): Boolean{
+    return true
+}
+
+fun Activity.isKeyboardClosed(): Boolean{
+    return false
+}
 
