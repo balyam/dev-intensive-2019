@@ -1,12 +1,9 @@
 package ru.skillbranch.devintensive
 
 import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.PorterDuff
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
@@ -14,8 +11,6 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.skillbranch.devintensive.extensions.hideKeyboard
 import ru.skillbranch.devintensive.models.Bender
@@ -25,7 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
     lateinit var benderImage: ImageView
     lateinit var textTxt: TextView
     lateinit var messageEt: EditText
-    lateinit var sendBt: ImageView
+    lateinit var sendBtn: ImageView
     lateinit var benderObj: Bender
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
         benderImage = iv_bender
         textTxt = tv_text
         messageEt = et_message
-        sendBt = iv_send
+        sendBtn = iv_send
 
         val status = savedInstanceState?.getString("STATUS") ?: Bender.Status.NORMAL.name
         val question = savedInstanceState?.getString("QUESTION") ?: Bender.Question.NAME.name
@@ -47,7 +42,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, TextView.OnEdito
         benderImage.setColorFilter(Color.rgb(r, g, b), PorterDuff.Mode.MULTIPLY)
 
         textTxt.text = benderObj.askQuestion()
-        sendBt.setOnClickListener(this)
+        sendBtn.setOnClickListener(this)
         messageEt.setOnEditorActionListener(this)
         messageEt.setImeActionLabel("Done", EditorInfo.IME_ACTION_DONE)
     }
