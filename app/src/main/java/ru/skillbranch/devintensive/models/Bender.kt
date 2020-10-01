@@ -1,9 +1,9 @@
 package ru.skillbranch.devintensive.models
 
-
 class Bender(var status:  Status = Status.NORMAL, var question: Question = Question.NAME){
 
-    var countWrongAnswer = 1
+   var countWrongAnswer = 1
+       private set
 
     fun askQuestion(): String = when(question){
 
@@ -22,7 +22,7 @@ class Bender(var status:  Status = Status.NORMAL, var question: Question = Quest
            question = question.nextQuestion()
            "Отлично - ты справился\n${question.question}" to status.color
         }
-        else if (countWrongAnswer >= 3) {
+        else if (countWrongAnswer >= 4) {
            countWrongAnswer = 1
            status = Status.NORMAL
            question = Question.NAME
@@ -54,7 +54,7 @@ class Bender(var status:  Status = Status.NORMAL, var question: Question = Quest
     }
 
     enum class Question(val question: String, val answers: List<String?>) {
-        NAME("Как меня зовут?", listOf("Бендер", "Bender")) {
+        NAME("Как меня зовут?", listOf("Бендер", "bender")) {
             override fun nextQuestion(): Question = PROFESSION
         },
         PROFESSION("Назови мою профессию?", listOf("сгибальщик", "bender"))
