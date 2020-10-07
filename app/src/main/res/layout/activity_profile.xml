@@ -13,13 +13,14 @@
     <ImageView
         android:id="@+id/aspectRatioImageView"
         android:layout_width="wrap_content"
-        android:layout_height="293dp"
+        android:layout_height="0dp"
         android:background="@color/color_primary_light"
+        android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/profile_bg"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,11 +30,11 @@
         android:layout_height="45dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_round_bg"
+        android:contentDescription="TODO"
         android:src="@drawable/ic_baseline_brightness_high_24"
         app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
         app:layout_constraintEnd_toStartOf="@+id/iv_avatar"
-        app:layout_constraintTop_toTopOf="@+id/iv_avatar"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
 
     <ImageView
         android:id="@+id/iv_avatar"
@@ -63,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/full_name"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
         app:layout_constraintEnd_toEndOf="@+id/iv_avatar"
@@ -74,8 +76,9 @@
         android:id="@+id/tv_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-medium"
+        android:text="@string/profile_rank"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
         app:layout_constraintEnd_toEndOf="@+id/iv_avatar"
@@ -86,32 +89,38 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="0dp"
         android:background="@color/color_primary_light"
         android:gravity="center_vertical"
         android:text="@string/profile_label_rating"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/textViewRespect"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/aspectRatioImageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewRespect"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="0dp"
         android:background="@color/color_primary_light"
         android:gravity="center_vertical"
         android:text="@string/profile_label_respect"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@id/aspectRatioImageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -127,22 +136,30 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/profile_label_respect"
         android:src="@drawable/ic_respect_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintBottom_toBottomOf="@+id/textViewRespect"
+        app:layout_constraintEnd_toEndOf="@+id/textViewRespect"
+        app:layout_constraintStart_toStartOf="@+id/textViewRespect"
+        app:layout_constraintTop_toTopOf="@+id/textViewRespect"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <TextView
+        android:id="@+id/textRankValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_normal_16"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="224dp" />
 
     <ImageView
         android:id="@+id/iconRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/ic_sp_24" />
+        android:contentDescription="@string/profile_label_rating"
+        app:srcCompat="@drawable/ic_sp_24"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="224dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
