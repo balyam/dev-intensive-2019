@@ -91,7 +91,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/color_primary_light"
-        android:gravity="center_vertical"
+        android:gravity="bottom|center_vertical"
         android:text="@string/profile_label_rating"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -109,7 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/color_primary_light"
-        android:gravity="center_vertical"
+        android:gravity="bottom|center_vertical"
         android:text="@string/profile_label_respect"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -146,20 +146,31 @@
         android:id="@+id/textRankValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="47dp"
         android:text="0"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="224dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintStart_toEndOf="@id/iconRank"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/iconRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@string/profile_label_rating"
-        app:srcCompat="@drawable/ic_sp_24"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="224dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@id/textRankValue"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_sp_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
