@@ -94,6 +94,7 @@
         android:gravity="bottom|center_vertical"
         android:text="@string/profile_label_rating"
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
         app:layout_constraintBottom_toBottomOf="@id/guideline2"
@@ -130,32 +131,20 @@
         app:layout_constraintGuide_percent="0.4"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iconRespect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/profile_label_respect"
-        android:src="@drawable/ic_respect_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewRespect"
-        app:layout_constraintEnd_toEndOf="@+id/textViewRespect"
-        app:layout_constraintStart_toStartOf="@+id/textViewRespect"
-        app:layout_constraintTop_toTopOf="@+id/textViewRespect"
-        app:layout_constraintVertical_bias="0.100000024" />
-
     <TextView
         android:id="@+id/textRankValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="47dp"
-        android:text="0"
+        android:text="@string/default_value_zero"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@id/textView"
         app:layout_constraintStart_toEndOf="@id/iconRank"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iconRank"
@@ -167,10 +156,39 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@id/textRankValue"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@id/textView"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_sp_24" />
+
+    <TextView
+        android:id="@+id/textRespect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/default_value_zero"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/textViewRespect"
+        app:layout_constraintEnd_toEndOf="@id/textViewRespect"
+        app:layout_constraintStart_toEndOf="@id/iconRespect"
+        app:layout_constraintTop_toTopOf="@id/textViewRespect"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iconRespect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/profile_label_respect"
+        android:src="@drawable/ic_respect_24"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewRespect"
+        app:layout_constraintEnd_toStartOf="@id/textRespect"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/textViewRespect"
+        app:layout_constraintTop_toTopOf="@+id/textViewRespect"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

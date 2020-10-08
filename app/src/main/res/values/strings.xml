@@ -9,4 +9,5 @@
     <string name="contentDescr_avatar">Фото</string>
     <string name="profile_rank">Junior Android Developer</string>
     <string name="full_name">Jonh Doe</string>
+    <string name="default_value_zero">0</string>
 </resources>
