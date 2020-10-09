@@ -5,7 +5,10 @@
     android:id="@+id/constraintLayout"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:isScrollContainer="false"
     android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:verticalScrollbarPosition="defaultPosition"
     app:layout_constraintHorizontal_weight="2"
     tools:context=".ui.profile.ProfileActivity">
 
@@ -93,7 +96,7 @@
         android:background="@color/color_primary_light"
         app:layout_constraintBottom_toBottomOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -166,21 +169,22 @@
 
     <ImageView
         android:id="@+id/iconRespect"
-        android:layout_width="51dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:contentDescription="@string/profile_label_respect"
         android:src="@drawable/ic_respect_24"
         app:layout_constraintBottom_toBottomOf="@id/view_rating"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintEnd_toEndOf="@id/view_rating"
         app:layout_constraintStart_toEndOf="@id/divider"
         app:layout_constraintTop_toTopOf="@id/view_rating"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintWidth_default="wrap" />
 
     <TextView
         android:id="@+id/textRespectValue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/default_value_zero"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
@@ -214,9 +218,10 @@
         android:id="@+id/iv_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@id/vert_guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label_first_name"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/ic_avatar" />
 
     <ImageView
@@ -225,7 +230,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/vert_guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label_about"
+        app:layout_constraintTop_toBottomOf="@+id/tilLastName"
         app:srcCompat="@drawable/ic_about" />
 
     <ImageView
@@ -234,7 +239,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/wr_repository"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/label_repository"
+        app:layout_constraintTop_toBottomOf="@+id/wr_about"
         app:srcCompat="@drawable/ic_repo" />
 
     <ImageView
@@ -247,50 +252,6 @@
         app:srcCompat="@drawable/ic_eye_24dp"
         tools:layout_editor_absoluteY="-3dp" />
 
-    <TextView
-        android:id="@+id/label_first_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_hint_first_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <TextView
-        android:id="@+id/label_last_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_hint_last_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/tilName"
-        app:layout_constraintVertical_bias="0.01" />
-
-    <TextView
-        android:id="@+id/label_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/profile_hint_about"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/tilLastName" />
-
-    <TextView
-        android:id="@+id/label_repository"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="@string/profile_hint_repository"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/wr_about" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
         android:layout_width="0dp"
@@ -300,14 +261,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_first_name"
+        app:layout_constraintTop_toTopOf="@id/iv_first_name"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_first_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/hint_name" />
+            android:hint="@string/profile_hint_first_name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -315,13 +276,13 @@
         android:id="@+id/tilLastName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_last"
+        android:hint="@string/profile_hint_last_name"
         android:textColorHint="@color/color_primary_dark"
         app:counterEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/tilName"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -340,7 +301,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_about"
+        app:layout_constraintTop_toTopOf="@id/iv_about"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -357,14 +318,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_repository"
+        app:layout_constraintTop_toTopOf="@id/iv_repository"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_repository"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="@string/repository_url" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
