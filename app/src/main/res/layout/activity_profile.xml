@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="@+id/iv_avatar" />
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_nick_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -83,43 +83,50 @@
         android:textSize="@dimen/font_normal_16"
         app:layout_constraintEnd_toEndOf="@+id/iv_avatar"
         app:layout_constraintStart_toStartOf="@+id/iv_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nick_name"
         tools:text="Junior Android Developer" />
 
-    <TextView
-        android:id="@+id/textView"
+    <View
+        android:id="@+id/view_rating"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/color_primary_light"
-        android:gravity="bottom|center_vertical"
-        android:text="@string/profile_label_rating"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toBottomOf="@id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/textViewRespect"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/aspectRatioImageView"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textViewRespect"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/color_primary_light"
-        android:gravity="bottom"
-        android:text="@string/profile_label_respect"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/font_normal_16"
         app:layout_constraintBottom_toBottomOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@id/aspectRatioImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/profile_label_rating"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_normal_16"
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintEnd_toStartOf="@id/divider"
+        app:layout_constraintStart_toStartOf="@id/view_rating"
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <TextView
+        android:id="@+id/tv_respect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:text="@string/profile_label_respect"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_normal_16"
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintEnd_toEndOf="@id/view_rating"
+        app:layout_constraintStart_toEndOf="@id/divider"
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -130,63 +137,57 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textRankValue"
+        android:id="@+id/textRatingValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
         android:text="@string/default_value_zero"
         android:textColor="@android:color/white"
         android:textSize="@dimen/font_normal_16"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@id/textView"
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintEnd_toStartOf="@id/divider"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@id/iconRank"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.2" />
+
 
     <ImageView
         android:id="@+id/iconRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="8dp"
         android:contentDescription="@string/profile_label_rating"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@id/textRankValue"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@id/textView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintEnd_toStartOf="@id/divider"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@id/view_rating"
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/ic_sp_24" />
-
-    <TextView
-        android:id="@+id/textRespect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/default_value_zero"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@id/textViewRespect"
-        app:layout_constraintEnd_toEndOf="@id/textViewRespect"
-        app:layout_constraintStart_toEndOf="@id/iconRespect"
-        app:layout_constraintTop_toTopOf="@id/textViewRespect"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iconRespect"
-        android:layout_width="wrap_content"
+        android:layout_width="51dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="8dp"
         android:contentDescription="@string/profile_label_respect"
         android:src="@drawable/ic_respect_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewRespect"
-        app:layout_constraintEnd_toStartOf="@id/textRespect"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@id/textViewRespect"
-        app:layout_constraintTop_toTopOf="@+id/textViewRespect"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toEndOf="@id/divider"
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/textRespectValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/default_value_zero"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/font_normal_16"
+        app:layout_constraintBottom_toBottomOf="@id/view_rating"
+        app:layout_constraintStart_toEndOf="@id/iconRespect"
+        app:layout_constraintTop_toTopOf="@id/view_rating"
+        app:layout_constraintVertical_bias="0.2" />
 
     <View
         android:id="@+id/divider"
@@ -195,41 +196,45 @@
         android:background="@color/color_gray_dark"
         app:layout_constraintBottom_toBottomOf="@id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintHeight_percent="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vert_guideline1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.12"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/iv_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/iv_about"
-        app:layout_constraintEnd_toStartOf="@+id/vert_guideline1"
-        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintEnd_toStartOf="@id/vert_guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.060000002"
+        app:layout_constraintTop_toTopOf="@id/label_first_name"
         app:srcCompat="@drawable/ic_avatar" />
 
     <ImageView
         android:id="@+id/iv_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toStartOf="@+id/vert_guideline1"
+        app:layout_constraintEnd_toStartOf="@id/vert_guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_first_name"
+        app:layout_constraintTop_toTopOf="@id/label_about"
         app:srcCompat="@drawable/ic_about" />
 
     <ImageView
         android:id="@+id/iv_repository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/vert_guideline1"
+        app:layout_constraintEnd_toStartOf="@id/wr_repository"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_about"
+        app:layout_constraintTop_toTopOf="@id/label_repository"
         app:srcCompat="@drawable/ic_repo" />
 
     <ImageView
@@ -237,8 +242,8 @@
         android:layout_width="35dp"
         android:layout_height="31dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tilRepository"
-        app:layout_constraintTop_toTopOf="@id/tilRepository"
+        app:layout_constraintStart_toEndOf="@id/wr_repository"
+        app:layout_constraintTop_toTopOf="@id/wr_repository"
         app:srcCompat="@drawable/ic_eye_24dp"
         tools:layout_editor_absoluteY="-3dp" />
 
@@ -262,106 +267,101 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
         app:layout_constraintTop_toBottomOf="@id/tilName"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <TextView
         android:id="@+id/label_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:text="@string/profile_hint_about"
-        app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilLastName"
-        app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintHorizontal_bias="0"/>
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
+        app:layout_constraintTop_toBottomOf="@id/tilLastName" />
 
     <TextView
         android:id="@+id/label_repository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:text="@string/profile_hint_repository"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editText2"
-        android:layout_width="256dp"
-        android:layout_height="28dp"
-        android:hint="hint" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editText3"
-        android:layout_width="256dp"
-        android:layout_height="28dp"
-        android:hint="hint" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vert_guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="79dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/vert_guideline1"
+        app:layout_constraintTop_toBottomOf="@id/wr_about" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
-        android:layout_width="204dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColorHint="@color/color_primary_dark"
+        app:counterEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_first_name">
+        app:layout_constraintTop_toBottomOf="@id/label_first_name"
+        app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_first_name"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
+            android:layout_height="match_parent"
             android:hint="@string/hint_name" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilLastName"
-        android:layout_width="268dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/hint_last"
         android:textColorHint="@color/color_primary_dark"
+        app:counterEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_last_name">
+        app:layout_constraintTop_toBottomOf="@id/label_last_name"
+        app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/wr_about"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_about"
+        android:textColorHint="@color/color_primary_dark"
+        app:counterEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/vert_guideline1"
+        app:layout_constraintTop_toBottomOf="@id/label_about"
+        app:layout_constraintWidth_percent="0.65">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilAbout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_about"
-        android:textColorHint="@color/color_primary_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_about">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilRepository"
+        android:id="@+id/wr_repository"
         android:layout_width="281dp"
         android:layout_height="wrap_content"
         android:textColorHint="@color/color_primary_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toBottomOf="@id/label_repository">
+        app:layout_constraintTop_toBottomOf="@id/label_repository"
+        app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_repository"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="hint" />
