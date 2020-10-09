@@ -9,5 +9,8 @@
     <string name="contentDescr_avatar">Фото</string>
     <string name="profile_rank">Junior Android Developer</string>
     <string name="full_name">Jonh Doe</string>
+    <string name="hint_name">Jonh</string>
+    <string name="hint_last">Doe</string>
+    <string name="hint_about">Лучше гор могут быть только горы</string>
     <string name="default_value_zero">0</string>
 </resources>
