@@ -298,10 +298,11 @@
         android:hint="@string/hint_about"
         android:textColorHint="@color/color_primary_dark"
         app:counterEnabled="true"
+        app:counterMaxLength="128"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toTopOf="@id/iv_about"
+        app:layout_constraintTop_toBottomOf="@id/tilLastName"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -318,7 +319,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="@id/vert_guideline1"
-        app:layout_constraintTop_toTopOf="@id/iv_repository"
+        app:layout_constraintTop_toBottomOf="@id/wr_about"
         app:layout_constraintWidth_percent="0.65">
 
         <com.google.android.material.textfield.TextInputEditText
