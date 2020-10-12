@@ -246,11 +246,11 @@
         android:id="@+id/iv_eye"
         android:layout_width="35dp"
         android:layout_height="31dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/wr_repository"
-        app:layout_constraintTop_toTopOf="@id/wr_repository"
         app:srcCompat="@drawable/ic_eye_24dp"
-        tools:layout_editor_absoluteY="-3dp" />
+        app:layout_constraintTop_toTopOf="@id/wr_repository"
+        app:layout_constraintBottom_toBottomOf="@id/wr_repository"
+        app:layout_constraintStart_toEndOf="@id/wr_repository"
+         />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
